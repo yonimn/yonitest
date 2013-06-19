@@ -1,13 +1,17 @@
-<div class="hero-unit">
-	<h1>Wellcome to FreeMarket!</h1>
-	<p>This is a demo for the coolest app ever
-	go to <%=link_to "arabic2use", "http://www.arabic2use.co.il" %>
-	for free arabic lessons on-line
+<% if user_signed_in? %>
+		<h1>You're logged in!</h1>
+<% else %>
+	<div class="hero-unit">
+		<h1>Wellcome to FreeMarket!</h1>
+		<p>This is a demo for the coolest app ever
+		go to <%=link_to "arabic2use", "http://www.arabic2use.co.il" %>
+		for free arabic lessons on-line
 
-	</p>
+		</p>
 
-	<p>
-		<%=link_to "Sign Up Now!", "#", class: "btn btn-warning btn-large"%>
-	</p>
-</div>
+		<p>
+			<%=link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-warning btn-large"%>
+		</p>
+	</div>
+<% end %>
 
